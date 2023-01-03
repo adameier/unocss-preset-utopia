@@ -1,0 +1,28 @@
+{
+	"name": "unocss-preset-utopia",
+	"engines": {
+		"node": ">=14.18"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"build-demo": "vite build --mode demo",
+		"test": "uvu tests -i utils",
+		"preview": "vite preview",
+		"release": "npx bumpp package.json --commit \"release: v\" --push --tag"
+	},
+	"dependencies": {
+		"@unocss/core": "^0.48.0",
+		"@unocss/preset-mini": "^0.48.0",
+		"fp-ts": "^2.13.1",
+		"fp-ts-std": "^0.15.1"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^0.30.1",
+		"@types/node": "^18.11.9",
+		"eslint": "^8.27.0",
+		"typescript": "^4.8.4",
+		"unocss": "^0.48.0",
+		"vite": "^3.2.3"
+	}
+}

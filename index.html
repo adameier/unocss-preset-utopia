@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UnoCSS Preset Chroma</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/antfu/unocss/main/playground/public/favicon.svg"
+        type="image/svg+xml" />
+</head>
+
+<body class="bg-white font-sans m-0 py-6 px-4 antialiased prose mx-auto">
+    <main class="mx-auto">
+        <a href="https://github.com/chu121su12/unocss-preset-chroma" target="_blank"
+            rel="noopener noreferrer">GitHub</a>
+        <h1>unocss-preset-utopia demo</h1>
+
+        <h2>Fluid type scale</h2>
+        <div class="space-y-2">
+            <p class="text-fluid-5 m-0">Step 5</p>
+            <p><code>text-fluid-5</code></p>
+
+            <p class="text-fluid-4">Step 4</p>
+            <p><code>text-fluid-4</code></p>
+
+            <p class="text-fluid-3">Step 3</p>
+            <p><code>text-fluid-3</code></p>
+            
+            <p class="text-fluid-2">Step 2</p>
+            <p><code>text-fluid-2</code></p>
+
+            <p class="text-fluid-1">Step 1</p>
+            <p><code>text-fluid-1</code></p>
+
+            <p class="text-fluid-0">Step 0</p>
+            <p><code>text-fluid-0</code></p>
+
+            <p class="text-fluid--1">Step -1</p>
+            <p><code>text-fluid--1</code></p>
+
+            <p class="text-fluid--2">Step -2</p>
+            <p><code>text-fluid--2</code></p>
+
+            <p class="text-fluid-3.14159">Step 3.14159</p>
+            <p><code>text-fluid-3.14159</code></p>
+
+            <div class="px-fluid-s-xl bg-blue/20">
+                <p class="bg-yellow">Fluid padding</p>
+            </div>
+            <p><code>px-fluid-s-xl</code></p>
+
+            <div class="px-fluid-s bg-blue/20">
+                <p class="bg-yellow">Fluid padding</p>
+            </div>
+            <p><code>px-fluid-s</code></p>
+            
+            <div class="bg-blue/20">
+                <p class="mx-fluid-s-xl bg-yellow">Fluid margin</p>
+            </div>
+            <p><code>mx-fluid-s-xl</code></p>
+
+            <div class="bg-blue/20">
+                <p class="mx-fluid-s bg-yellow">Fluid margin</p>
+            </div>
+            <p><code>mx-fluid-s</code></p>
+
+            <div class="space-y-fluid-m">
+                <div class="h-2 bg-red"></div>
+                <div class="h-2 bg-green"></div>
+                <div class="h-2 bg-blue"></div>
+            </div>
+            <p><code>space-y-fluid-m</code></p>
+
+
+        </div>
+        <div id="readme"></div>
+    </main>
+
+    <script src="https://unpkg.com/shiki"></script>
+    <script type="module">
+        import 'uno.css'
+//   import { marked } from 'marked'
+//   import readme from './README.md?raw'
+
+//   document.getElementById('readme').innerHTML = marked.parse(readme, {
+//     langPrefix: '',
+//   })
+
+//   const preBlocks = document.querySelectorAll('pre')
+
+//   shiki
+//     .getHighlighter({
+//       theme: 'material-palenight',
+//       langs: ['html', 'sh', 'js', 'ts'],
+//     })
+//     .then((hl) => {
+//       for (const block of preBlocks) {
+//         block.outerHTML = hl.codeToHtml(
+//           block.textContent,
+//           block.firstElementChild.className || 'text',
+//         )
+//       }
+//     })
+    </script>
+</body>
+
+</html>
