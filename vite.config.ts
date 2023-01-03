@@ -13,4 +13,18 @@ export default defineConfig(({ mode }) => ({
       ],
     }),
   ],
+  build: {
+    minify: mode === 'demo',
+    lib:
+      mode === 'demo'
+        ? false
+        : {
+            entry: './src/index.ts',
+            formats: ['es'],
+            fileName: () => 'index.js',
+          },
+    rollupOptions: {
+      external: ['unocss'],
+    },
+  },
 }))

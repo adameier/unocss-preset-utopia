@@ -7,9 +7,7 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"build-demo": "vite build --mode demo",
-		"test": "uvu tests -i utils",
-		"preview": "vite preview",
-		"release": "npx bumpp package.json --commit \"release: v\" --push --tag"
+		"preview": "vite preview"
 	},
 	"dependencies": {
 		"@unocss/core": "^0.48.0",
