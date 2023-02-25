@@ -1,0 +1,29 @@
+{
+    "name": "unocss-preset-utopia",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.mjs"
+        },
+        "./*": "./*"
+    },
+    "main": "dist/index.cjs",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "*.css"
+    ],
+    "scripts": {
+        "build": "unbuild",
+        "stub": "unbuild --stub"
+    },
+    "dependencies": {
+        "@unocss/core": "^0.49.0",
+        "@unocss/preset-mini": "^0.49.0"
+    },
+    "devDependencies": {
+        "unbuild": "^1.1.1"
+    }
+}
