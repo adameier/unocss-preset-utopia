@@ -1,3 +1,4 @@
 [build]
-  publish = "demo/dist"
-  command = "pnpm deploy"
+  base = "demo"
+  command = "pnpm build"
+  publish = "dist"
