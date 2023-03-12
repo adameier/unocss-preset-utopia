@@ -1,6 +1,8 @@
 {
 	"name": "unocss-utopia",
 	"type": "module",
+	"version": "0.1",
+	"private": "true",
 	"scripts": {
 		"deploy": "pnpm --filter \"unocss-utopia-demo\" build"
 	},
