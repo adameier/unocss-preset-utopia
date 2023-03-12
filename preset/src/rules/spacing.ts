@@ -3,7 +3,7 @@ import { directionMap } from '@unocss/preset-mini/utils'
 import type { RequiredOptions } from '../options/types'
 import { fluidSizeValue } from '../utils'
 
-const fluidSpaceValue = (match: string) => (options: RequiredOptions) => {
+export const fluidSpaceHandler = (match: string) => (options: RequiredOptions) => {
   const sizeFactors = match.split('-').map(s => options.spaceValues[s]).filter(v => v !== undefined)
 
   if (sizeFactors.length < 1)
@@ -17,9 +17,9 @@ export interface FluidPropertyOptions {
   includeDirection?: boolean
 }
 
-export const fluidPropertyHandler = ({ property, includeDirection = true }: FluidPropertyOptions) => (options: RequiredOptions) =>
+const fluidPropertyHandler = ({ property, includeDirection = true }: FluidPropertyOptions) => (options: RequiredOptions) =>
   ([, d, v]: RegExpMatchArray): CSSEntries | undefined => {
-    const cssVal = fluidSpaceValue(v)(options)
+    const cssVal = fluidSpaceHandler(v)(options)
 
     if (!cssVal)
       return
@@ -52,7 +52,7 @@ const marginRegexes: RegExp[] = [
 
 const marginRules = (options: RequiredOptions) => rulesWithMatcher(marginRegexes, fluidPropertyHandler({ property: 'margin' })(options))
 
-const fluidSpaceHandler = (options: RequiredOptions): DynamicMatcher => (match) => {
+const fluidSpaceBetweenHandler = (options: RequiredOptions): DynamicMatcher => (match) => {
   const res = fluidPropertyHandler({ property: 'margin', includeDirection: true })(options)(match)
 
   const [, d] = match
@@ -77,7 +77,7 @@ const spaceRegexes: RegExp[] = [
 ]
 
 const spaceRules = (options: RequiredOptions): Rule[] => [
-  ...rulesWithMatcher(spaceRegexes, fluidSpaceHandler(options)),
+  ...rulesWithMatcher(spaceRegexes, fluidSpaceBetweenHandler(options)),
   [/^space-?([xy])-reverse$/, ([, d]) => ({ [`--un-space-${d}-reverse`]: 1 })],
   [/^space-(block|inline)-reverse$/, ([, d]) => ({ [`--un-space-${d}-reverse`]: 1 })],
 ]
@@ -89,7 +89,7 @@ const gapDirections: Record<string, string> = {
 }
 
 const fluidGapHandler = (options: RequiredOptions): DynamicMatcher => ([, d = '', s]) => {
-  const v = fluidSpaceValue(s)(options)
+  const v = fluidSpaceHandler(s)(options)
   if (v) {
     return {
       [`grid-${gapDirections[d]}gap`]: v,
@@ -117,7 +117,7 @@ function getSizePropName(minmax: string, hw: string) {
 }
 
 const fluidSizeHandler = (options: RequiredOptions): DynamicMatcher => ([, m, w, s]) => ({
-  [getSizePropName(m, w)]: fluidSpaceValue(s)(options),
+  [getSizePropName(m, w)]: fluidSpaceHandler(s)(options),
 })
 
 const sizeRegexes: RegExp[] = [
@@ -128,7 +128,7 @@ const sizeRegexes: RegExp[] = [
 const sizeRules = (options: RequiredOptions): Rule[] => rulesWithMatcher(sizeRegexes, fluidSizeHandler(options))
 
 const flexBasisRule = (options: RequiredOptions): Rule => [
-  /^(?:flex-)?basis-?fluid-?(.+)$/, ([, d]) => ({ 'flex-basis': fluidSpaceValue(d)(options) }),
+  /^(?:flex-)?basis-?fluid-?(.+)$/, ([, d]) => ({ 'flex-basis': fluidSpaceHandler(d)(options) }),
 ]
 
 export const spacingRules = (options: RequiredOptions) => [

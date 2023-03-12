@@ -108,5 +108,45 @@ const textScales = [...Array(10)].map((_, i) => i - 2).reverse()
         </div>
       </SpaceFluidDemo>
     </div>
+    <h2 class="text-fluid-4 mt-fluid-m mb-fluid-s">
+      CSS Property rule
+    </h2>
+    <p class="mb-fluid-s">
+      In case you require Utopia values in situations not covered by the rules above,
+      you can use the following rules to apply values for any CSS property you wish:
+      <code>{{ '[<property>]-fluid-type-<scale>' }}</code> or
+      <code>{{ '[<property>]-fluid-space-<space-value>' }}</code>
+    </p>
+    <div class="flex flex-col gap-fluid-m">
+      <SpaceFluidDemo
+        v-slot="{ ref: functionRef }"
+        :properties="['height']"
+        rule="[height]-fluid-type-2"
+      >
+        <div :ref="functionRef" class="rounded-2 [height]-fluid-type-2 w-40 bg-blue" />
+      </SpaceFluidDemo>
+      <p>
+        The below is an example of a container using Andy Bell's <a
+          class="underline" href="https://andy-bell.co.uk/my-favourite-3-lines-of-css/"
+        >flow</a> utility and the `--flow-space` property set for the last element.
+      </p>
+      <SpaceFluidDemo
+        v-slot="{ ref: functionRef }"
+        :properties="['margin-block-start']"
+        rule="[--flow-space]-fluid-space-xl"
+      >
+        <div class="rounded-2 bg-blue/30 flex flex-col flow w-40">
+          <div class="rounded-2 bg-blue/60 h-8" />
+          <div class="rounded-2 bg-blue/60 h-8" />
+          <div :ref="functionRef" class="rounded-2 bg-blue/80 h-8 [--flow-space]-fluid-space-xl" />
+        </div>
+      </SpaceFluidDemo>
+    </div>
   </div>
 </template>
+
+<style>
+.flow > * + * {
+    margin-block-start: var(--flow-space, 1em);
+}
+</style>
