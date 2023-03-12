@@ -88,7 +88,7 @@ interface PresetUtopiaOptions {
   usesPresetMini?: boolean
 }
 ```
-The preset uses shared `minWidth`, `maxWidth`, `minSize`, and `maxSize` values for both 'type' and 'scale' calculations. 
+The preset options correlate to the values used in the Utopia 'type' and 'space' calculators. The preset uses shared `minWidth`, `maxWidth`, `minSize`, and `maxSize` values for both 'type' and 'space' calculations. 
 
 If you aren't using `@unocss/preset-mini` or a preset that extends it, make sure to set the 
 `usesPresetMini` option to `false`.
