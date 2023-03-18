@@ -2,7 +2,7 @@
 
 > [Utopia](utopia.fyi) for UnoCSS
 
-If you aren't sure what Utopia is or what it is, check out [utopia.fyi](utopia.fyi), and the [type](https://utopia.fyi/type/calculator) and [space](https://utopia.fyi/space/calculator) calculators in particular.
+If you aren't sure what Utopia is or what it is, check out [utopia.fyi](https://utopia.fyi/), and the [type](https://utopia.fyi/type/calculator) and [space](https://utopia.fyi/space/calculator) calculators in particular.
 
 This preset provides rules to easily use Utopia fluid values in utility classes.
 
