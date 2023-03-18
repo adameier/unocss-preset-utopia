@@ -7,14 +7,14 @@
         "build": "pnpm --filter \"unocss-preset-utopia\" build && vite build"
     },
     "devDependencies": {
+        "@unocss/reset": "^0.49.7",
         "@vitejs/plugin-vue": "^4.0.0",
-        "unocss": "^0.49.4",
+        "@vueuse/core": "^9.13.0",
+        "unocss": "^0.50.6",
         "unocss-preset-utopia": "workspace:*",
         "vite": "^4.1.1"
     },
     "dependencies": {
-        "@unocss/reset": "^0.49.7",
-        "@vueuse/core": "^9.13.0",
         "vue": "^3.2.47"
     }
 }
