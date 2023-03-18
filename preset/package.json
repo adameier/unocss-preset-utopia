@@ -1,7 +1,14 @@
 {
     "name": "unocss-preset-utopia",
     "version": "0.2.0",
+    "description": "UnoCSS preset that integrates Utopia calculations.",
+    "homepage": "https://github.com/adameier/unocss-preset-utopia",
     "license": "MIT",
+    "author": "Adam Meier <aameier@protonmail.com>",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/adameier/unocss-preset-utopia.git"
+    },
     "keywords": [
         "unocss",
         "utopia",
